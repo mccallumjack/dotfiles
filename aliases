@@ -1,0 +1,40 @@
+# Unix
+alias ll="ls -al"
+alias ln="ln -v"
+alias mkdir="mkdir -p"
+alias e="$EDITOR"
+alias v="$VISUAL"
+alias ls='ls -Gh'
+alias ll="ls -lahG"
+alias myports="lsof -i -n -P | grep LISTEN"
+
+# Misc
+alias rm="trash" # just puts it in the trash
+alias zshconfig="vim ~/.zshrc.local"
+alias cat="ccat" # code coloring
+alias weather='curl -4 http://wttr.in/'
+
+# Bundler
+alias b="bundle"
+alias be="bundle exec"
+
+# Rails
+alias migrate="bundle exec rake db:migrate db:rollback && rake db:migrate db:test:prepare"
+alias s="bundle exec rspec"
+
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
+alias ppath="echo $PATH | tr : '\n'"
+
+# Git
+alias gs="git status"
+alias gs='git status'
+alias gp='git pull'
+alias ga='git add '
+alias gaa='git aa'
+alias gcm='git commit -m '
+alias gl='git lg'
+alias gd='git diff --color | sed -E "s/^([^-+ ]*)[-+ ]/\\1/" | less -r'
+
+# Include local aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
