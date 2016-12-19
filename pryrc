@@ -16,7 +16,7 @@ class Hash
 end
 
 # Check for Local pryrc
-if File.file?("/Users/jackmccallum/.pryrc.local.rb")
-  require_relative '/Users/jackmccallum/.pryrc.local'
+if File.file?("#{ENV['HOME']}/.pryrc.local.rb")
+  require_relative "#{ENV['HOME']}/.pryrc.local.rb"
 end
 
