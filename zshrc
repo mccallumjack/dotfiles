@@ -47,3 +47,6 @@ _load_settings "$HOME/.zsh/configs"
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# added by travis gem
+[ -f /Users/mccallumjack/.travis/travis.sh ] && source /Users/mccallumjack/.travis/travis.sh
