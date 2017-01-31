@@ -182,3 +182,13 @@ vnoremap <Leader>p :w !pbcopy <CR><CR>
 nnoremap <Leader><Left> :5winc > <CR>
 nnoremap <Leader><Right> :5winc < <CR>
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
+
+" Angular commands
+autocmd FileType typescript JsPreTmpl html
+autocmd FileType typescript syn clear foldBraces
+
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+let g:syntastic_typescript_tsc_fname = ''
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow

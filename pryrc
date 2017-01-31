@@ -3,6 +3,10 @@ Pry.prompt = [proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level
 
 # Toys methods
 # See https://gist.github.com/807492
+if require 'awesome_print'
+  AwesomePrint.pry!
+end
+
 class Array
   def self.toy(n=10, &block)
     block_given? ? Array.new(n,&block) : Array.new(n) {|i| i+1}
