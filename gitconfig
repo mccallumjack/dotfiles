@@ -17,6 +17,7 @@
   dh1 = diff HEAD~1
   l = log --pretty=colored
   mh = log -S # method history
+  fh = log --all --full-history -- # file history
 
   # Show the diff between the latest commit and the current state
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
