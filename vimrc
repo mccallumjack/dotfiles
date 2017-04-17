@@ -24,6 +24,7 @@ set autoread
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
+  colorscheme koehler
 endif
 
 if filereadable(expand("~/.vimrc.bundles"))
@@ -143,6 +144,9 @@ map <leader>l :w\|:silent !reload-chrome<cr>
 vnoremap <leader>ib :!align<cr>
 
 
+" mix mapping
+nnoremap <Leader>m :! mix test
+
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
@@ -176,19 +180,8 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 " Jacks Edits
-nmap <C-o> O<Esc>j
 nmap <CR> o<Esc>k
 vnoremap <Leader>p :w !pbcopy <CR><CR>
 nnoremap <Leader><Left> :5winc > <CR>
 nnoremap <Leader><Right> :5winc < <CR>
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
-
-" Angular commands
-autocmd FileType typescript JsPreTmpl html
-autocmd FileType typescript syn clear foldBraces
-
-let g:typescript_compiler_binary = 'tsc'
-let g:typescript_compiler_options = ''
-let g:syntastic_typescript_tsc_fname = ''
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
