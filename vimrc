@@ -180,7 +180,7 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 " Jacks Edits
-nmap <CR> o<Esc>k
+nmap <Leader><CR> o<Esc>k
 vnoremap <Leader>p :w !pbcopy <CR><CR>
 nnoremap <Leader><Left> :5winc > <CR>
 nnoremap <Leader><Right> :5winc < <CR>
