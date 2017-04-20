@@ -24,7 +24,6 @@ set autoread
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
-  colorscheme koehler
 endif
 
 if filereadable(expand("~/.vimrc.bundles"))
