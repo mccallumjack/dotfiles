@@ -36,5 +36,9 @@ alias gcm='git commit -m '
 alias gl='git lg'
 alias gd='git diff --color | sed -E "s/^([^-+ ]*)[-+ ]/\\1/" | less -r'
 
+# Finding big things
+alias find_big_files='find / -type f -size +10M -exec ls -lh {} \;'
+alias find_big_folders='du -h . | sort -n -r | head -10'
+
 # Include local aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
