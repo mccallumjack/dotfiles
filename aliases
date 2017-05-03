@@ -24,7 +24,6 @@ alias s="bundle exec rspec"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
-alias ppath="echo $PATH | tr : '\n'"
 
 # Git
 alias gs="git status"
