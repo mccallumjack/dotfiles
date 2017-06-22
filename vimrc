@@ -86,8 +86,8 @@ if executable('ag')
 endif
 
 " Make it obvious where 80 characters is
-" set textwidth=80
-" set colorcolumn=+1
+set textwidth=120
+set colorcolumn=+1
 
 " Numbers
 set number
@@ -149,6 +149,7 @@ nnoremap <Leader>m :! mix test
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
+let g:syntastic_ruby_exec = '~/.rbenv/shims/ruby'
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_eruby_ruby_quiet_messages =
     \ {"regex": "possibly useless use of a variable in void context"}
@@ -185,3 +186,16 @@ vnoremap <Leader>p :w !pbcopy <CR><CR>
 nnoremap <Leader><Left> :5winc > <CR>
 nnoremap <Leader><Right> :5winc < <CR>
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
+let g:airline_theme='bubblegum'
+nnoremap <Leader>g :Gstatus <CR>
+nnoremap <Leader>b :Gblame <CR>
+nnoremap <Leader>c :Gcommit <CR>
+
+function! SearchAg()
+  let search_term = input('Search For: ')
+  exec ':! ag ' . search_term
+endfunction
+map <leader>a :call SearchAg()<cr>
+
+
+
