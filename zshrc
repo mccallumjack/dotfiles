@@ -50,3 +50,5 @@ _load_settings "$HOME/.zsh/configs"
 
 # added by travis gem
 [ -f /Users/mccallumjack/.travis/travis.sh ] && source /Users/mccallumjack/.travis/travis.sh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

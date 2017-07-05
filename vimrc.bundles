@@ -54,6 +54,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/unimpaired'
 
 
 if filereadable(expand("~/.vimrc.bundles.local"))

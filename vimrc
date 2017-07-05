@@ -19,6 +19,7 @@ set laststatus=2
 set showmatch
 set incsearch
 set autoread
+set clipboard=unnamed
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -122,9 +123,6 @@ nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 
-" Paste at end of line
-nnoremap , $p
-
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
@@ -142,7 +140,6 @@ nnoremap Y y$
 map <leader>l :w\|:silent !reload-chrome<cr>
 " Align selected lines
 vnoremap <leader>ib :!align<cr>
-
 
 " mix mapping
 nnoremap <Leader>m :! mix test
@@ -185,8 +182,10 @@ nmap <Leader><CR> o<Esc>k
 vnoremap <Leader>p :w !pbcopy <CR><CR>
 nnoremap <Leader><Left> :5winc > <CR>
 nnoremap <Leader><Right> :5winc < <CR>
+
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 let g:airline_theme='bubblegum'
+
 nnoremap <Leader>g :Gstatus <CR>
 nnoremap <Leader>b :Gblame <CR>
 nnoremap <Leader>c :Gcommit <CR>
