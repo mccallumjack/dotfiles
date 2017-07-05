@@ -19,7 +19,6 @@ set laststatus=2
 set showmatch
 set incsearch
 set autoread
-set clipboard=unnamed
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
