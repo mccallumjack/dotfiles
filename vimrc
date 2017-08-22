@@ -193,7 +193,7 @@ function! SearchAg()
   let search_term = input('Search For: ')
   exec ':! ag ' . search_term
 endfunction
-map <leader>a :call SearchAg()<cr>
+map <leader>ag :call SearchAg()<cr>
 
 
 

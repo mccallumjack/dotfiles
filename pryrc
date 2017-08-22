@@ -1,10 +1,12 @@
 # Prompt with ruby version
 Pry.prompt = [proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
 
-# Toys methods
-# See https://gist.github.com/807492
-if require 'awesome_print'
-  AwesomePrint.pry!
+begin
+  if require 'awesome_print'
+    AwesomePrint.pry!
+  end
+rescue LoadError
+  puts "Awesome Print not installed for this Ruby Version #{RUBY_VERSION} - skipping"
 end
 
 class Array
