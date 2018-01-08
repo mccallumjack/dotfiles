@@ -189,6 +189,13 @@ nnoremap <Leader>g :Gstatus <CR>
 nnoremap <Leader>b :Gblame <CR>
 nnoremap <Leader>c :Gcommit <CR>
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+
 function! SearchAg()
   let search_term = input('Search For: ')
   exec ':! ag ' . search_term
