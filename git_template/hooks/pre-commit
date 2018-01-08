@@ -5,3 +5,12 @@ local_hook="$HOME"/.git_template.local/hooks/pre-commit
 if [ -f "$local_hook" ]; then
   . "$local_hook"
 fi
+
+# Pass a SKIP_RUBOCOP=1 if you need to commit without checking for some reason
+if `command -v rubocop > /dev/null` && [ -z $SKIP_RUBOCOP ]; then
+  git status --porcelain \
+  | grep -E '^A|^M' \
+  | grep '.rb' \
+  | awk '{print $2}' \
+  | xargs rubocop
+fi
