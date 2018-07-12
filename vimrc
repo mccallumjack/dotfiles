@@ -63,6 +63,8 @@ augroup vimrcEx
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
+
+  autocmd BufEnter * :syntax sync fromstart
 augroup END
 
 " Softtabs, 2 spaces
@@ -86,7 +88,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" Make it obvious where 80 characters is
+" Make it obvious where 120 characters is
 set textwidth=120
 set colorcolumn=+1
 
