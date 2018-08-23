@@ -1,6 +1,8 @@
 log
 tags
 tmp
+dist
+build
 vendor
 .git/
 bower_components/

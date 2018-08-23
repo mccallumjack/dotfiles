@@ -50,7 +50,6 @@ augroup vimrcEx
     \ endif
 
   " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
 
@@ -89,7 +88,7 @@ if executable('ag')
 endif
 
 " Make it obvious where 120 characters is
-set textwidth=120
+set textwidth=80
 set colorcolumn=+1
 
 " Numbers
@@ -127,6 +126,9 @@ nnoremap <Leader>l :call RunLastSpec()<CR>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
+
+" Markdown Adjustments
+syn match markdownError "\w\@<=\w\@="
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -198,12 +200,14 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+" vim-test
+nmap <Leader>t :TestFile<CR>
+nmap <Leader>s :TestNearest<CR>
+nmap <Leader>l :TestLast<CR>
+nmap <Leader>a :TestSuite<CR>
 
 function! SearchAg()
   let search_term = input('Search For: ')
   exec ':! ag ' . search_term
 endfunction
 map <leader>ag :call SearchAg()<cr>
-
-
-
