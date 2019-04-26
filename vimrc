@@ -21,6 +21,8 @@ set incsearch
 set autoread
 set cm=blowfish2
 
+set exrc
+
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
@@ -150,7 +152,6 @@ nnoremap <Leader>m :! mix test
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
-let g:syntastic_ruby_exec = '~/.rbenv/shims/ruby'
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_eruby_ruby_quiet_messages =
     \ {"regex": "possibly useless use of a variable in void context"}
@@ -187,7 +188,9 @@ vnoremap <Leader>p :w !pbcopy <CR><CR>
 nnoremap <Leader><Left> :5winc > <CR>
 nnoremap <Leader><Right> :5winc < <CR>
 
-let g:ruby_path = system('echo $HOME/.rbenv/shims')
+" Comment and format into correct width a block of text
+vmap <Leader>c gcgvgq
+
 let g:airline_theme='bubblegum'
 
 nnoremap <Leader>g :Gstatus <CR>
@@ -211,3 +214,13 @@ function! SearchAg()
   exec ':! ag ' . search_term
 endfunction
 map <leader>ag :call SearchAg()<cr>
+
+if has('folding')
+  if has('windows')
+    set fillchars=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+  endif
+  set foldmethod=indent               " not as cool as syntax, but faster
+  set foldlevelstart=99               " start unfolded
+endif
+
+set secure

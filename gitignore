@@ -10,3 +10,6 @@ tags
 tmp/**/*
 !tmp/cache/.keep
 .envrc
+.vimrc
+.skip_rubocop
+.tool-versions

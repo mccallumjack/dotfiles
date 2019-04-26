@@ -54,6 +54,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'posva/vim-vue'
 Plug 'gabrielelana/vim-markdown'
 Plug 'janko-m/vim-test'
+Plug 'andyl/vim-projectionist-elixir'
+Plug 'rust-lang/rust.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
